@@ -1,0 +1,31 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 16px;
+}
+
+header ul {
+    display: flex;
+    gap: 57px;
+}
+
+header li {
+    list-style: none;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+header p {
+    text-align: right;
+    @media screen and (max-width: 768px) {
+    font-size: 14px;        
+    text-transform: uppercase;        }
+}
+
+header img {
+    @media screen and (max-width: 768px) {
+        width: 145px;
+    }
+}

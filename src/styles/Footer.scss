@@ -1,0 +1,31 @@
+.footer {
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 209px;
+    padding : 16px 8px;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    padding-top: 40px;
+    @media screen and (max-width: 768px) {
+            justify-content: center;
+            width:150px;
+    }
+}
+
+.footer-content p {
+    text-align: center;
+    vertical-align: bottom;
+     @media screen and (max-width: 768px) {
+            font-size: 12px;
+            padding-inline: 20px;
+     }
+}
