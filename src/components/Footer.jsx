@@ -1,5 +1,5 @@
 import "../styles/Footer.scss";
-import logo from "../assets/kasa-logo-white.svg";
+import logo from "../assets/images/kasa-logo-white.svg";
 
 export default function Footer() {
   return (

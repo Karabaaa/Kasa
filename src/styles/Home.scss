@@ -1,0 +1,27 @@
+.home {
+  width: 100%;
+  @media screen and (max-width: 768px) {
+            margin:20px;
+  }
+}
+
+.cards-container {
+    background-color: #F6F6F6;
+    display : grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    justify-items: center;
+    gap: 50px;
+    padding: 50px;
+    margin-block: 50px;;
+    border-radius: 16px;
+    @media screen and (max-width: 768px) {
+        background-color: transparent;
+        grid-template-columns: repeat(1,1fr);
+        gap: 20px;
+        padding: 0px;
+        padding-top: 20px;
+        margin-block: 0px;
+    }
+}
+
+

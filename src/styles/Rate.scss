@@ -1,0 +1,14 @@
+.rate {
+    display:flex;
+    gap: 4px;
+    align-items: center;
+}
+
+.star {
+    width: 36px;
+    height: 36px;
+    @media screen and (max-width: 768px) {
+        width: 18px;
+        height: 18px;
+    }
+}
