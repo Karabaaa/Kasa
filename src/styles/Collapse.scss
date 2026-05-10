@@ -1,62 +1,105 @@
 .collapse {
-    width: 100%;
+  width: 100%;
 }
 
 .collapse-header {
-    width: 100%;
-    background-color: var(--color-primary);
-    height:52px;
-    border-radius: 5px;
-    padding : 10px 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-    @media screen and (max-width: 768px) {
-        height: 30px;
-}
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  background-color: var(--color-primary);
+  height: 52px;
+  border: 0;
+  border-radius: 5px;
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+
+  @media screen and (max-width: 768px) {
+    height: 30px;
+  }
 }
 
 .collapse-title {
-    font-size: 18px;
-    font-weight: 700;
-    color: white;
-    margin:0;
-    padding:0;
-    vertical-align: middle;
-    @media screen and (max-width: 768px) {
-        font-size: 13px;
-    }
+  font-size: 18px;
+  font-weight: 700;
+  color: white;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+
+  @media screen and (max-width: 768px) {
+    font-size: 13px;
+  }
 }
 
 .collapse-arrow {
-    width: 24px;
-    height: 14px;
-    transition: transform 0.3s ease;
-    @media screen and (max-width: 768px) {
-        width: 16px;
-        height: 9px;
-    }
+  width: 24px;
+  height: 14px;
+  transition: transform 0.3s ease;
+
+  @media screen and (max-width: 768px) {
+    width: 16px;
+    height: 9px;
+  }
 }
 
 .collapsed {
-    transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
 .collapse-content {
-    width: 100%;
-    background-color: var(--color-secondary);
-    border-radius: 5px;
-    padding: 15px;
+  width: 100%;
+  display: grid;
+  grid-template-rows: 0fr;
+  overflow: hidden;
+  background-color: var(--color-secondary);
+  border-radius: 5px;
+  transform: translateY(-8px);
+  transition:
+    grid-template-rows 0.3s ease-in,
+    transform 0.3s ease-in;
+}
+
+.collapse-content.open {
+  grid-template-rows: 1fr;
+  transform: translateY(0);
+  transition:
+    grid-template-rows 0.3s ease-out,
+    transform 0.3s ease-out;
+}
+
+.collapse-content-inner {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.collapse-content-inner .collapse-description {
+  transform: translateY(-100%);
+  transition: transform 0.3s ease-in;
+}
+
+.collapse-content.open .collapse-description {
+  transform: translateY(0);
+  transition: transform 0.3s ease-out;
 }
 
 .collapse-description {
-    font-size: 18px;
-    font-weight: 400;    
-    color: black;
-    margin:0;
-    padding:0;
-    @media screen and (max-width: 768px) {
-        font-size: 12px;
-    }
+  font-size: 18px;
+  font-weight: 400;
+  color: black;
+  margin: 0;
+  padding: 20px 15px;
+
+  @media screen and (max-width: 768px) {
+    font-size: 12px;
+  }
+}
+
+.collapse-description ul {
+  margin: 0;
+  padding: 0;
 }

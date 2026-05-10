@@ -24,9 +24,11 @@ header ul {
 
 header li {
     list-style: none;
-    &:hover {
-        text-decoration: underline;
-    }
+}
+
+header a:hover p,
+header a.active p {
+    text-decoration: underline;
 }
 
 header p {

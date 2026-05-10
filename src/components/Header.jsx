@@ -1,6 +1,6 @@
 import "../styles/Header.scss";
 import logo from "../assets/images/kasa-logo-210.svg";
-import { Link } from "react-router";
+import { NavLink } from "react-router";
 
 export default function Header() {
   return (
@@ -9,14 +9,14 @@ export default function Header() {
       <nav>
         <ul>
           <li>
-            <Link to="/">
+            <NavLink to="/" end>
               <p> Accueil</p>
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link to="/about">
+            <NavLink to="/about">
               <p> A Propos</p>
-            </Link>
+            </NavLink>
           </li>
         </ul>
       </nav>

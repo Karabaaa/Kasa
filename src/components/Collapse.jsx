@@ -3,25 +3,33 @@ import ArrowUp from "../assets/images/arrow_up.svg";
 import { useState } from "react";
 
 export default function Collapse({ title, description }) {
-  const [isCollapsed, setIsCollapsed] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+
   const toggleCollapse = () => {
-    setIsCollapsed(!isCollapsed);
+    setIsOpen((currentState) => !currentState);
   };
+
   return (
     <div className="collapse">
-      <div className="collapse-header" onClick={toggleCollapse}>
-        <h2 className="collapse-title">{title}</h2>
+      <button
+        className="collapse-header"
+        type="button"
+        onClick={toggleCollapse}
+        aria-expanded={isOpen}
+      >
+        <span className="collapse-title">{title}</span>
         <img
           src={ArrowUp}
-          alt="dropdown"
-          className={`collapse-arrow ${isCollapsed ? "collapsed" : ""}`}
+          alt=""
+          aria-hidden="true"
+          className={`collapse-arrow ${isOpen ? "collapsed" : ""}`}
         />
-      </div>
-      {isCollapsed && (
-        <div className="collapse-content">
-          <p className="collapse-description">{description}</p>
+      </button>
+      <div className={`collapse-content ${isOpen ? "open" : ""}`}>
+        <div className="collapse-content-inner">
+          <div className="collapse-description">{description}</div>
         </div>
-      )}
+      </div>
     </div>
   );
 }
